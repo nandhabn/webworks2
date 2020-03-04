@@ -1,0 +1,299 @@
+<!-- 31. Calculating string length -->
+<!-- <html>
+    <body>
+        <script>
+            function strlen(){
+            var text = document.getElementById("input").value;
+            var length = text.length;
+            document.write("The length of "+text+" is "+length);
+            }
+            </script>
+            <input type="text" id="input">
+            <button type="button" onclick="strlen()">Answer</button>
+    </body>
+</html> -->
+
+<!-- 32.Finding first occurance of String  -->
+
+<!-- <html>
+    <body>
+        <script>
+           
+           var text="Start with what you have reach where you want to go";
+           var position = text.indexOf("reach");
+           document.write(position);
+        </script>
+    </body>
+</html> -->
+
+<!-- 33. Finding last ocurance of the string  -->
+
+    <!-- <html>
+        <body>
+            <script>
+            
+            var text="Be that thing, be the change";
+            var position = text.indexOf("be");
+            document.write(position);    
+            </script>
+        </body>
+    </html> -->
+
+<!-- 34. The Slice method -->
+
+<!-- <html>
+    <body>
+        <script>
+            var text = "have a great day";
+            var slice= text.slice(7,16);
+            document.write(slice);
+        </script>
+    </body>
+</html> -->
+
+<!-- 35. substr to specify the length of the extracted -->
+
+<!-- <html>
+    <body>
+        <script>
+        
+        var text="Be that thing, be the change";
+        var position = text.substr(0,13);
+        document.write(position);    
+        </script>
+    </body>
+</html> -->
+
+<!-- 36. Replace String Content  -->
+
+ <!-- <html>
+     <body>
+         <script>
+             var text = "Always be like Adhi Jeeva";
+             var changed = text.replace("Adhi Jeeva","Hiphop Tamizha");
+             document.write(changed);   
+         </script>
+     </body>
+ </html> -->
+
+ <!-- 37. To Upper case  -->
+
+ <!-- <html>
+     <body>
+         <script>
+             var text = "Adhi Jeeva";
+             document.write(text.toUpperCase());
+         </script>
+     </body>
+ </html> -->
+
+ <!-- 38. To Lower case  -->
+
+ <!-- <html>
+     <body>
+         <script>
+             var text = "Adhi Jeeva";
+             document.write(text.toLowerCase());
+         </script>
+     </body>
+ </html> -->
+
+<!-- 39. Concatenation  -->
+<!-- <html>
+    <body>
+        <script>
+            var text1 = "Adhi";
+            var text2 = "Jeeva";
+            document.write(text1.concat(" ",text2));
+        </script>
+    </body>
+</html> -->
+
+<!-- 40. char method  -->
+<!-- <html>
+     <body>
+         <script>
+             var text = "Adhi Jeeva";
+             document.write(text.toLowerCase());
+         </script>
+     </body>
+ </html> -->
+
+<!-- 41. ASCII value  -->
+
+<!-- <html>
+     <body>
+         <script>
+             var text = "Adhi Jeeva";
+             document.write(text.charCodeAt(0));
+         </script>
+     </body>
+ </html> -->
+
+
+ <!-- 42. Property Access  -->
+
+ <!-- <html>
+     <body>
+         <script>
+             var text = "Adhi Jeeva";
+             document.write(text[5]);
+         </script>
+     </body>
+ </html> -->
+
+ <!-- 43. convert string to Array  -->
+
+ <!-- <html>
+     <body>
+         <script>
+             var text = "a,b,c,d,e,f,g,h,i";
+             var arr = text.split(",");
+             document.write(arr[2]);
+         </script>
+     </body>
+ </html> -->
+
+
+ <!-- 44. Printing char by char  -->
+
+ <!-- <html>
+     <body>
+         <script>
+             var text = "Adhi Jeeva";
+             var array = text.split("");
+    
+             for (var i=0;i<array.length;i++)
+             {
+                document.write(array[i]+"<br>");
+             }
+            
+         </script>
+     </body>
+ </html> -->
+
+ <!-- 45. join method  -->
+ <!-- <html>
+     <body>
+         <script>
+             var array = ["Meesaya murukku","Natpe thunai","Naan Sirithal"];
+             var text = array.join(" $");
+             document.write(text);
+         </script>
+     </body>
+ </html> -->
+
+ <!-- 46. sorting array  -->
+
+ <!-- <html> 
+     <body>
+         <script>
+             var text = ["Meesaya murukku","natpe thunai","Naan Sirithal"];
+             text.sort();
+             document.write(text);
+         </script>
+     </body>
+ </html> -->
+
+ <!-- 47. Date  -->
+ <!-- <html>
+     <body>
+         <script>
+             var d = Date();
+             document.write(d);
+         </script>
+     </body>
+ </html> -->
+
+ <!-- 48. PI value  -->
+ <!-- <html>
+     <body>
+         <script>
+             var x = Math.PI;
+             document.write(x);
+         </script>
+     </body>
+ </html> -->
+
+ <!-- 49. Round a number  -->
+ <!-- <html>
+     <body>
+         <script>
+             document.write(Math.round(2.14));
+         </script>
+     </body>
+ </html> -->
+
+ <!-- 50. power of a number  -->
+
+ <!-- <html>
+     <body>
+         <script>
+             document.write(Math.pow(4,2));
+         </script>
+     </body>
+ </html> -->
+
+
+ <!-- 51. To find a square root  -->
+ <!-- <html>
+     <body>
+         <script>
+             document.write(Math.sqrt(4));
+         </script>
+     </body>
+ </html> -->
+
+ <!-- 52. To find maximum  -->
+
+<!-- <html>
+     <body>
+         <script>
+             document.write(Math.max(10,20,3,4,565,5345,5435));
+         </script>
+     </body>
+ </html> -->
+
+<!-- 53. To find minimum -->
+
+<!-- <html>
+     <body>
+         <script>
+             document.write(Math.min(10,20,3,4,565,5345,5435));
+         </script>
+     </body>
+ </html> -->
+
+<!-- 54. To print a random number  -->
+
+<!-- <html>
+     <body>
+         <script>
+             document.write(Math.random());
+         </script>
+     </body>
+ </html> -->
+
+ <!-- 55. Conditional operator  -->
+ <!-- <html>
+     <body>
+         <script>
+             var age = 20;
+             var votable = (age>18) ? "You can vote":"You should grow up";
+             document.write(votable);
+         </script>
+     </body>
+ </html> -->
+
+ <!-- 56. Multiplying without multiplication operator  -->
+ <!-- <html>
+     <body>
+         <script>
+             var a = 10;
+             var b = 3;
+             var ans = a/(1/b);
+             document.write(ans);
+         </script>
+     </body>
+ </html> -->
+
