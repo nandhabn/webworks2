@@ -17,7 +17,7 @@ function init() {
 var startgen = () => {
     for (let i = 0; i < 50; i++) {
         let xy = coordinateGenerator();
-        stars.push([xy, Math.floor(Math.random() * 10) * 0.1, Math.round(Math.random() * 10) * 0.1]);
+        stars.push([xy, Math.floor(Math.random() * 10) * 0.1, !!Math.round(Math.random().toFixed(1))]);
     }
 }
 async function randr() {
@@ -40,10 +40,13 @@ async function randr() {
     stars = await stars.map(val => {
         let size = val[1], inc = val[2];
         star(...val[0], size);
-        size < 0 ? (() => { size = 0; inc = true })() : size > 15 ? (() => { size = 2; inc = false })() : "";
-        return inc ? [val[0], size += 0.1] : [val[0], size -= 0.1];
+        size < 0 ? (() => { size = 0; inc = true })() : size > 1 ? (() => { size = 1; inc = false })() : "";
+        return inc ? [val[0], size = size + 0.1, inc] : [val[0], size = size - 0.1, inc];
     });
+    console.log(stars[0], stars[1])
+    debugger;
     moon();
+    context.shadowColor = "#fff0"
 }
 
 function coordinateGenerator() {
@@ -64,47 +67,22 @@ var layer = (x, y, xs, xe, ys, ye, c) => {
     context.fill()
 }
 function moon(x = 1001, y = 100, size = 300) {
-    drawlight(x, y, size);
+    // drawlight(x, y, size);
     let x1 = size / 2, y1 = size;
     context.beginPath();
     context.fillStyle = "#fff"
     context.moveTo(x, y);
     context.bezierCurveTo(x - size * 0.5, y + size * 0.5, x, y + size * 1.2, x + x1, y + y1);
     context.bezierCurveTo(x - size * 0.2, y + size * .8, x - size * .1, y + size * .2, x, y);
+    context.shadowColor = "#fff"
+    context.shadowOffsetX = 0;
+    context.shadowOffsetY = 0;
+    context.shadowBlur = 100;
     context.fill();
 }
-const drawlight = (x, y, r) => {
-    let i;
-    y -= 10
-    x -= 10
-    r += 10
-    for (i = 0; r > i; i++) {
-        context.beginPath();
-        context.moveTo(x, y);
-        context.strokeStyle = (function () {
-            var letters = '0123456789ABCDEF';
-            var color = '#';
-            let tempColor = letters[Math.abs(12 - Math.floor(((i + 1) / 35) % 15))];
-            color += `${tempColor}${tempColor}${tempColor}${2}`;
-            console.log(color)
-            // debugger;
-            return color;
-        })()
-
-        context.bezierCurveTo(x - r * 0.5 - i, y + r * 0.5, x, y + r * 1.2, x + r / 2 + (i / 10), y + r + (i / 30));
-        context.bezierCurveTo(x - r * 0.2 + i, y + r * .8, x - r * .1, y + r * .2 + (i / 30), x + (i / 10), y - (i / 30));
-        // context.moveTo(x + r / 2 + (i / 10), y + r);
-        // context.bezierCurveTo(x - r * 0.2 + i, y + r * .8, x - r * .1, y + r, x + (i / 10), y);
-        context.stroke()
-    }
-
-
-}
-
 
 // star
-const star = (x, y, size1 = 0) => {
-    this.size = size1
+const star = (x, y, size) => {
     context.beginPath();
     context.fillStyle = "#fff"
     context.moveTo(x, y); // p
@@ -135,5 +113,3 @@ const star = (x, y, size1 = 0) => {
 //     }
 //     context.stroke()
 // }
-
-
